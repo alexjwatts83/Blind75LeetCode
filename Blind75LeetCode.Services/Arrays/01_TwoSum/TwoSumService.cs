@@ -4,21 +4,30 @@ public class TwoSumService
 {
     public static int[] TwoSum(int[] nums, int target)
     {
+        // nums = [2, 1, 3, 5, 8]
+        // target = 9
         int[] ans = new int[2];
         Dictionary<int, int> map = new ();
         for (int i = 0; i < nums.Length; i++)
         {
-            int diff = target - nums[i];
+            var diff = target - nums[i];
+
+            // if the map contains the difference
             if (!map.ContainsKey(diff))
             {
                 map.Add(nums[i], i);
+                continue;
             }
-            else
-            {
-                ans[0] = i;
-                ans[1] = map[diff];
-                break;
-            }
+            ans[0] = map[diff];
+            ans[1] = i;
+            break;
+            /* i  diff  map
+             * 0  7     [[2, 0]]
+             * 1  8     [[2, 0], [1, 1]]
+             * 2  6     [[2, 0], [1, 1], [3,2]]
+             * 3  4     [[2, 0], [1, 1], [3,2], [5, 3]]
+             * 4  1     [[2, 0], [1, 1], [3,2], [5, 3]]
+             */
         }
         return ans;
     }
