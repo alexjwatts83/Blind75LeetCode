@@ -1,6 +1,6 @@
 ﻿namespace Blind75LeetCode.Services.Arrays._01_TwoSum;
 
-internal class TwoSumService
+public class TwoSumService
 {
     public static int[] TwoSum(int[] nums, int target)
     {

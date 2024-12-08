@@ -23,4 +23,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blind75LeetCode.Services\Blind75LeetCode.Services.csproj" />
+  </ItemGroup>
+
 </Project>
