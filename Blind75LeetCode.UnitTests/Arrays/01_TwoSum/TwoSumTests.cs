@@ -7,11 +7,23 @@ public class TwoSumTests
 {
     [Theory]
     [MemberData(nameof(Data))]
-    public void Tests(int[] nums, int target, int[] answer)
+    public void OptimizedTests(int[] nums, int target, int[] answer)
     {
         // Arrange
         // Act
-        var result = TwoSumService.TwoSum(nums, target);
+        var result = TwoSumService.Optimized(nums, target);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void BruteForceTest(int[] nums, int target, int[] answer)
+    {
+        // Arrange
+        // Act
+        var result = TwoSumService.BruteForce(nums, target);
 
         // Assert
         result.ShouldBe(answer);

@@ -2,7 +2,7 @@
 
 public class TwoSumService
 {
-    public static int[] TwoSum(int[] nums, int target)
+    public static int[] Optimized(int[] nums, int target)
     {
         // nums = [2, 1, 3, 5, 8]
         // target = 9
@@ -28,6 +28,30 @@ public class TwoSumService
              * 3  4     [[2, 0], [1, 1], [3,2], [5, 3]]
              * 4  1     [[2, 0], [1, 1], [3,2], [5, 3]]
              */
+        }
+        return ans;
+    }
+
+    public static int[] BruteForce(int[] nums, int target)
+    {
+        // nums = [2, 1, 3, 5, 8]
+        // target = 9
+        int[] ans = new int[2];
+        var found = false;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            for (int j = 0; j < nums.Length; j++)
+            {
+                if (i == j) continue;
+                var sum = nums[i] + nums[j];
+                if (sum != target) continue;
+                ans[0] = i;
+                ans[1] = j;
+                found = true;
+                break;
+            }
+            if (found)
+                break;
         }
         return ans;
     }
