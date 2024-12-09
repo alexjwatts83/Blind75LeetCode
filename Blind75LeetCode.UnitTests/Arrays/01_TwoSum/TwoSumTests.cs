@@ -1,26 +1,25 @@
 ﻿using Blind75LeetCode.Services.Arrays._01_TwoSum;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blind75LeetCode.UnitTests.Arrays._01_TwoSum;
 
 public class TwoSumTests
 {
-    [Fact]
-    public void Tests()
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void Tests(int[] nums, int target, int[] answer)
     {
         // Arrange
-        int[] nums = [2, 1, 3, 5, 8];
-        int target = 9;
-
         // Act
         var result = TwoSumService.TwoSum(nums, target);
 
         // Assert
-        result.ShouldBe([1, 4]);
+        result.ShouldBe(answer);
     }
+
+    public static IEnumerable<object[]> Data =>
+        new List<object[]>
+        {
+            new object[] { new int[] { 2, 1, 3, 5, 8 }, 9, new int[] { 1, 4 } },
+        };
 }
