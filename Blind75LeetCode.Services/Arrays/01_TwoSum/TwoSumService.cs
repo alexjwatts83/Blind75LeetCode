@@ -34,21 +34,29 @@ public class TwoSumService
 
     public static int[] BruteForce(int[] nums, int target)
     {
-        // nums = [2, 1, 3, 5, 8]
-        // target = 9
+        // nums = [3, 2, 4]
+        // target = 6
+        // ans = [1, 2]
+
         int[] ans = new int[2];
         var found = false;
         for (int i = 0; i < nums.Length; i++)
         {
-            for (int j = 0; j < nums.Length; j++)
+            var sumI = nums[i];
+            var j = i + 1;
+            while (i != j)
             {
-                if (i == j) continue;
-                var sum = nums[i] + nums[j];
-                if (sum != target) continue;
-                ans[0] = i;
-                ans[1] = j;
-                found = true;
-                break;
+                var sum = sumI + nums[j];
+                if (sum == target) { 
+                    ans[0] = i;
+                    ans[1] = j;
+                    found = true;
+                    break;
+                }
+
+                j++;
+                if (j == nums.Length)
+                    j = 0;
             }
             if (found)
                 break;
