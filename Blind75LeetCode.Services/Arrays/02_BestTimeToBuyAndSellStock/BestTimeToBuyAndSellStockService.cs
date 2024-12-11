@@ -34,12 +34,18 @@ public class BestTimeToBuyAndSellStockService
 
     public static int Optimised(int[] nums)
     {
+        // 7, 1, 5, 3, 5, 4
         var answer = 0;
-
+        var minPrice = nums[0];
         // loop through the numbers
-        for (int i = 0; i < nums.Length; i++)
+        for (int i = 1; i < nums.Length; i++)
         {
+            var value = nums[i] - minPrice;
+            if (value > answer)
+                answer = value;
 
+            if (nums[i] < minPrice )
+                minPrice = nums[i];
         }
 
         return answer;
