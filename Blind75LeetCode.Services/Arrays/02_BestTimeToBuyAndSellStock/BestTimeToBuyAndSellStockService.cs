@@ -12,7 +12,6 @@ public class BestTimeToBuyAndSellStockService
         var answer = 0;
 
         // loop through the numbers
-        Dictionary<int, int> map = new();
         for (int i = 0; i < nums.Length; i++)
         {
             var biggest = -1;
@@ -29,5 +28,22 @@ public class BestTimeToBuyAndSellStockService
         }
 
         return answer;
+        // TC: O(n^2)
+        // SC: O(1)
+    }
+
+    public static int Optimised(int[] nums)
+    {
+        var answer = 0;
+
+        // loop through the numbers
+        for (int i = 0; i < nums.Length; i++)
+        {
+
+        }
+
+        return answer;
+        // TC: O(n)
+        // SC: O(1)
     }
 }
