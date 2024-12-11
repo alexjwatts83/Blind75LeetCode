@@ -7,11 +7,23 @@ public class BestTimeToBuyAndSellStockTests
 {
     [Theory]
     [MemberData(nameof(Data))]
+    public void BruteForce(int[] nums, int answer)
+    {
+        // Arrange
+        // Act
+        var result = BestTimeToBuyAndSellStockService.BruteForce(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
+    [Theory]
+    [MemberData(nameof(Data))]
     public void Optimised(int[] nums, int answer)
     {
         // Arrange
         // Act
-        var result = BestTimeToBuyAndSellStockService.Run(nums);
+        var result = BestTimeToBuyAndSellStockService.Optimised(nums);
 
         // Assert
         result.ShouldBe(answer);

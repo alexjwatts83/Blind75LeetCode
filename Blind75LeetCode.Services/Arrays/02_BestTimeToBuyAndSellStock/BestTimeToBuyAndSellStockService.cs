@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Blind75LeetCode.Services.Arrays._02_BestTimeToBuyAndSellStock;
 public class BestTimeToBuyAndSellStockService
 {
-    public static int Run(int[] nums)
+    public static int BruteForce(int[] nums)
     {
         var answer = 0;
 
