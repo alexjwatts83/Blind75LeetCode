@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Blind75LeetCode.Services.Arrays._03_ContainsDuplicate;
 public class ContainsDuplicateService
 {
-    public bool BruteForce(int[] nums)
+    public static bool BruteForce(int[] nums)
     {
         var containsDuplicates = false;
 

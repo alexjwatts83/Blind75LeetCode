@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blind75LeetCode.Services.Arrays._03_ContainsDuplicate;
+using Shouldly;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +10,16 @@ namespace Blind75LeetCode.UnitTests.Arrays._03_ContainsDuplicate;
 
 public class ContainsDuplicateTests
 {
-    [Fact]
-    public void BruteForceTests()
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void BruteForceTests(int[] nums, bool answer)
     {
+        // Arrange
+        // Act
+        var result = ContainsDuplicateService.BruteForce(nums);
 
+        // Assert
+        result.ShouldBe(answer);
     }
 
     public static IEnumerable<object[]> Data =>
