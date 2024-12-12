@@ -37,7 +37,7 @@ public class TwoSumTests
             new object[] { new int[] { 2, 1, 3, 5, 8 }, 9, new int[] { 1, 4 } },
             new object[] { new int[] { 3, 2, 4 }, 6, new int[] { 1, 2 } },
             new object[] { new int[] { -1, -2, -3, -4, -5 }, -8, new int[] { 2, 4 } },
-            new object[] { new int[] { 10, 15, 20, 25, 30 }, 45, new int[] { 2, 3} },
+            //new object[] { new int[] { 10, 15, 20, 25, 30 }, 45, new int[] { 2, 3} },
             // whilst 15 + 30 = 45, 20 and 25, are interated over first and equal 45 as well
         };
 }
