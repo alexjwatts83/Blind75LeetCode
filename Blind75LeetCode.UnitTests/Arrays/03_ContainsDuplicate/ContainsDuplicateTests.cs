@@ -34,6 +34,18 @@ public class ContainsDuplicateTests
         result.ShouldBe(answer);
     }
 
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void OptimisedSortedTests(int[] nums, bool answer)
+    {
+        // Arrange
+        // Act
+        var result = ContainsDuplicateService.OptimisedSorted(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {

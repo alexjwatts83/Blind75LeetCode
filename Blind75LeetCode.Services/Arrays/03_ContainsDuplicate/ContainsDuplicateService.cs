@@ -41,4 +41,17 @@ public class ContainsDuplicateService
         }
         return false;
     }
+
+    public static bool OptimisedSorted(int[] nums)
+    {
+        var sorted = nums.OrderBy(x => x).ToArray();
+        var previous = sorted[0];
+        for (int i = 1; i < sorted.Length; i++)
+        {
+            if (previous == sorted[i])
+                return true;
+            previous = sorted[i];
+        }
+        return false;
+    }
 }
