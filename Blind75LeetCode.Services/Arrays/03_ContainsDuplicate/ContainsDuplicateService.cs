@@ -38,6 +38,8 @@ public class ContainsDuplicateService
         {
             if (existing.Contains(nums[i]))
                 return true;
+            else
+                existing.Add(nums[i]);
         }
         return false;
     }

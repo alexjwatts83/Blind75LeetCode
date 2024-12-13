@@ -53,5 +53,6 @@ public class ContainsDuplicateTests
             new object[] { new int[] { 1, 2, 3, 1 }, true },
             new object[] { new int[] { 1, 1, 1, 3, 3, 4 }, true },
             new object[] { new int[] { 1, 3, 4, 2 }, false },
+            new object[] { new int[] { 5, 1, 3, 2, 1 }, true },
         };
 }
