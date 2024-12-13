@@ -27,4 +27,18 @@ public class ContainsDuplicateService
 
         return containsDuplicates;
     }
+
+    public static bool Optimised(int[] nums)
+    {
+        var existing = new HashSet<int>
+        {
+            nums[0]
+        };
+        for (int i = 1; i < nums.Length; i++)
+        {
+            if (existing.Contains(nums[i]))
+                return true;
+        }
+        return false;
+    }
 }
