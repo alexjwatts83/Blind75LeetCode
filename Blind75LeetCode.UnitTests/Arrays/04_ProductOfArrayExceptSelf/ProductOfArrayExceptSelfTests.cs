@@ -7,11 +7,23 @@ public class ProductOfArrayExceptSelfTests
 {
     [Theory]
     [MemberData(nameof(Data))]
-    public void OptimisedSortedTests(int[] nums, int[] answer)
+    public void UseDivisionTests(int[] nums, int[] answer)
     {
         // Arrange
         // Act
-        var result = ProductOfArrayExceptSelfService.BruteForce(nums);
+        var result = ProductOfArrayExceptSelfService.UseDivision(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void PrefixAndSufficProductTests(int[] nums, int[] answer)
+    {
+        // Arrange
+        // Act
+        var result = ProductOfArrayExceptSelfService.PrefixAndSufficProduct(nums);
 
         // Assert
         result.ShouldBe(answer);
