@@ -56,6 +56,7 @@ public class ProductOfArrayExceptSelfService
         prefix[1] = nums[0];
         suffix[nums.Length - 1] = 1;
         suffix[nums.Length - 2] = nums[nums.Length - 1];
+
         // [-1, -1, 0, -3, 3]
         for (int i = 2; i < nums.Length; i++)
         {
@@ -64,16 +65,26 @@ public class ProductOfArrayExceptSelfService
 
         for (int i = nums.Length - 2; i >= 0; i--)
         {
-            var index = i + 1;
-            var prev = suffix[index];
-            var cur = nums[index];
-
-            suffix[i] = suffix[i + 1] * nums[i + 1]; // look left for value 
+            suffix[i] = suffix[i + 1] * nums[i + 1]; // look right for value 
         }
 
         for (int i = 0; i < nums.Length; i++)
         {
             answer[i] = prefix[i] * suffix[i];
+        }
+
+        return answer;
+    }
+
+    public static int[] PrefixProductOnly(int[] nums)
+    {
+        var answer = new int[nums.Length];
+        var prefix = new int[nums.Length];
+
+        // [-1, -1, 0, -3, 3]
+        for (int i = 0; i < nums.Length; i++)
+        {
+            answer[i] = prefix[i];
         }
 
         return answer;
