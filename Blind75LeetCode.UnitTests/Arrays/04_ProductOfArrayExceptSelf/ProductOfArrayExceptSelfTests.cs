@@ -29,6 +29,18 @@ public class ProductOfArrayExceptSelfTests
         result.ShouldBe(answer);
     }
 
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void BruteForceTests(int[] nums, int[] answer)
+    {
+        // Arrange
+        // Act
+        var result = ProductOfArrayExceptSelfService.BruteForce(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {

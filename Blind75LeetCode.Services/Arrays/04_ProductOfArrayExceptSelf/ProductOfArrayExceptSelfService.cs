@@ -1,14 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Versioning;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Blind75LeetCode.Services.Arrays._04_ProductOfArrayExceptSelf;
+﻿namespace Blind75LeetCode.Services.Arrays._04_ProductOfArrayExceptSelf;
 
 public class ProductOfArrayExceptSelfService
 {
+    public static int[] BruteForce(int[] nums)
+    {
+        // [-1, -1, 0, -3, 3]
+        var answer = new int[nums.Length];
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            var product = 1;
+            for (int j = 0; j < nums.Length; j++)
+            {
+                if (i == j)
+                    continue;
+                product *= nums[j];
+            }
+            answer[i] = product;
+        }
+
+        return answer;
+    }
+
     public static int[] UseDivision(int[] nums)
     {
         var answer = new int[nums.Length];
