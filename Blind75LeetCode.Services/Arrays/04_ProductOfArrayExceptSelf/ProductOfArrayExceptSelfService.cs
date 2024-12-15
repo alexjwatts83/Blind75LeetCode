@@ -79,9 +79,29 @@ public class ProductOfArrayExceptSelfService
         var prefix = new int[nums.Length];
 
         // [-1, -1, 0, -3, 3]
-        for (int i = 0; i < nums.Length; i++)
+        prefix[0] = 1;
+        for (int i = 1; i < nums.Length; i++)
         {
-            answer[i] = prefix[i];
+            prefix[i] = prefix[i - 1] * nums[i - 1]; // look left for value 
+        }
+        var suffix = 1;
+        answer[nums.Length - 1] = prefix[nums.Length -1];    
+        for (int i = nums.Length - 2; i >= 0; i--)
+        {
+            //  0,1,2,3
+            // [1,2,3,4]
+            // i = 2
+            // answer[3] = 6
+            // suffix = 1
+            // nums[i]= 3
+            // nums[i + 1] = 4
+            // answer[3] = 8
+            answer[i] = (suffix * nums[i + 1]) * prefix[i];
+            suffix = suffix * nums[i + 1];
+            // i = 2
+            // prefix[2] = 2
+            // suffx = 
+            // answer[3] = 4
         }
 
         return answer;
