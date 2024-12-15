@@ -53,6 +53,19 @@ public class ProductOfArrayExceptSelfTests
         result.ShouldBe(answer);
     }
 
+
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void PrefixProductOnlyTake2Tests(int[] nums, int[] answer)
+    {
+        // Arrange
+        // Act
+        var result = ProductOfArrayExceptSelfService.PrefixProductOnlyTake2(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {

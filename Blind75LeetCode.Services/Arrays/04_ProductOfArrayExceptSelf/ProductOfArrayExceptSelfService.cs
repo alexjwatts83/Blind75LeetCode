@@ -106,4 +106,25 @@ public class ProductOfArrayExceptSelfService
 
         return answer;
     }
+
+    public static int[] PrefixProductOnlyTake2(int[] nums)
+    {
+        var answer = new int[nums.Length];
+        var prefix = new int[nums.Length];
+
+        // [-1, -1, 0, -3, 3]
+        prefix[0] = 1;
+        for (int i = 1; i < nums.Length; i++)
+        {
+            prefix[i] = prefix[i - 1] * nums[i - 1]; // look left for value 
+        }
+        var suffix = 1;
+        for (int i = nums.Length - 1; i >= 0; i--)
+        {
+            answer[i] = (suffix) * prefix[i];
+            suffix = suffix * nums[i];
+        }
+
+        return answer;
+    }
 }
