@@ -26,7 +26,7 @@ public class MaxSubArrayTests
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {
-            new object[] { new int[] { 1, 2, 3, 4 }, new int[] { 24, 12, 8, 6 } },
+            new object[] { new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }, new int[] { 4, -1, 2, 1 } },
         };
 }
 
