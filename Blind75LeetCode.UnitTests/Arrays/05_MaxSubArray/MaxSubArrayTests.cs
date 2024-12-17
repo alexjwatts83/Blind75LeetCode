@@ -1,11 +1,5 @@
-﻿using Blind75LeetCode.Services.Arrays._04_ProductOfArrayExceptSelf;
-using Blind75LeetCode.Services.Arrays._05_MaxSubArray;
+﻿using Blind75LeetCode.Services.Arrays._05_MaxSubArray;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blind75LeetCode.UnitTests.Arrays._05_MaxSubArray;
 
@@ -13,11 +7,11 @@ public class MaxSubArrayTests
 {
     [Theory]
     [MemberData(nameof(Data))]
-    public void BruteForceTests(int[] nums, int answer)
+    public void Optimisedests(int[] nums, int answer)
     {
         // Arrange
         // Act
-        var result = MaxSubArrayService.BruteForce(nums);
+        var result = MaxSubArrayService.Optimised(nums);
 
         // Assert
         result.ShouldBe(answer);

@@ -1,7 +1,7 @@
 ﻿namespace Blind75LeetCode.Services.Arrays._05_MaxSubArray;
 public class MaxSubArrayService
 {
-    public static int BruteForce(int[] nums)
+    public static int Optimised(int[] nums)
     {
         var cur = nums[0];
         var max = nums[0];
@@ -11,8 +11,6 @@ public class MaxSubArrayService
             var sum = cur + val;
             cur = Math.Max(sum, val);
             max = Math.Max(max, cur);
-            //if (cur > max)
-            //    max = cur;
         }
 
         return max;
