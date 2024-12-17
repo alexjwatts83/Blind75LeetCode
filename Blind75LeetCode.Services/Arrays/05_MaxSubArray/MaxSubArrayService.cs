@@ -8,11 +8,11 @@ public class MaxSubArrayService
         for (int i = 1; i < nums.Length; i++)
         {
             var val = nums[i];
-            var sum = val + cur;
-            if (sum > cur)
-                cur = sum;
-            if (cur > max)
-                max = cur;
+            var sum = cur + val;
+            cur = Math.Max(sum, val);
+            max = Math.Max(max, cur);
+            //if (cur > max)
+            //    max = cur;
         }
 
         return max;
