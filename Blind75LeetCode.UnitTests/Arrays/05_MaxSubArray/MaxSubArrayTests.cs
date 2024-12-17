@@ -13,7 +13,7 @@ public class MaxSubArrayTests
 {
     [Theory]
     [MemberData(nameof(Data))]
-    public void BruteForceTests(int[] nums, int[] answer)
+    public void BruteForceTests(int[] nums, int answer)
     {
         // Arrange
         // Act
@@ -26,7 +26,7 @@ public class MaxSubArrayTests
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {
-            new object[] { new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }, new int[] { 4, -1, 2, 1 } },
+            new object[] { new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }, 6 },
         };
 }
 
