@@ -15,4 +15,20 @@ public class MaxSubArrayService
 
         return max;
     }
+
+    public static int BruteForce(int[] nums)
+    {
+        var max = nums[0];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            var sum = 0;
+            for (int j = i; j < nums.Length; j++)
+            {
+                sum += nums[j];
+                max = Math.Max(max, sum);
+            }
+        }
+
+        return max;
+    }
 }

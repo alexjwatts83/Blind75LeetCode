@@ -7,11 +7,23 @@ public class MaxSubArrayTests
 {
     [Theory]
     [MemberData(nameof(Data))]
-    public void Optimisedests(int[] nums, int answer)
+    public void OptimisedTests(int[] nums, int answer)
     {
         // Arrange
         // Act
         var result = MaxSubArrayService.Optimised(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void BruteForceTests(int[] nums, int answer)
+    {
+        // Arrange
+        // Act
+        var result = MaxSubArrayService.BruteForce(nums);
 
         // Assert
         result.ShouldBe(answer);
