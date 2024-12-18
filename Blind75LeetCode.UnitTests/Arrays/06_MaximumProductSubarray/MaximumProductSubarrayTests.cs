@@ -1,11 +1,5 @@
-﻿using Blind75LeetCode.Services.Arrays._05_MaxSubArray;
-using Blind75LeetCode.Services.Arrays._06_MaximumProductSubarray;
+﻿using Blind75LeetCode.Services.Arrays._06_MaximumProductSubarray;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blind75LeetCode.UnitTests.Arrays._06_MaximumProductSubarray;
 public class MaximumProductSubarrayTests
@@ -17,6 +11,18 @@ public class MaximumProductSubarrayTests
         // Arrange
         // Act
         var result = MaximumProductSubarrayService.BruteForce(nums);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void OptimisedTests(int[] nums, int answer)
+    {
+        // Arrange
+        // Act
+        var result = MaximumProductSubarrayService.Optimised(nums);
 
         // Assert
         result.ShouldBe(answer);
