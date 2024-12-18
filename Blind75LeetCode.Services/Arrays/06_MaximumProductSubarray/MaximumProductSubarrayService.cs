@@ -9,8 +9,18 @@ public static class MaximumProductSubarrayService
 {
     public static int BruteForce(int[] nums)
     {
-        var answer = 0;
+        var max = nums[0];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            var sum = nums[i];
+            for (int j = i + 1; j < nums.Length; j++)
+            {
+                var val = nums[j];
+                sum *= nums[j];
+                max = Math.Max(max, sum);
+            }
+        }
 
-        return answer;
+        return max;
     }
 }

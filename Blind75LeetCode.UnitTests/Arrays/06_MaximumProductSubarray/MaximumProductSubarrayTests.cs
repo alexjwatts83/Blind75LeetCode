@@ -12,7 +12,7 @@ public class MaximumProductSubarrayTests
 {
     [Theory]
     [MemberData(nameof(Data))]
-    public void OptimisedTests(int[] nums, int answer)
+    public void BruteForceTests(int[] nums, int answer)
     {
         // Arrange
         // Act
@@ -25,6 +25,7 @@ public class MaximumProductSubarrayTests
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {
-            new object[] { new int[] { -2, -4 }, -2 },
+            new object[] { new int[] { 1, 2, 3, 4 }, 24 },
+            new object[] { new int[] { -1, -2, -3, -4, -5 }, 120 }
         };
 }
