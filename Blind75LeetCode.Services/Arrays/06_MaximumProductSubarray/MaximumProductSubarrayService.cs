@@ -28,7 +28,7 @@ public static class MaximumProductSubarrayService
         var answer = nums[0];
         var min = 1;
         var max = 1;
-        for (int i = 1; i < nums.Length; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
             var val = nums[i];
             if (val == 0)
@@ -45,6 +45,6 @@ public static class MaximumProductSubarrayService
                 answer = max;
         }
 
-        return max;
+        return answer;
     }
 }
