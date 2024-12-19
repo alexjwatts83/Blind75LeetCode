@@ -25,14 +25,24 @@ public static class MaximumProductSubarrayService
 
     public static int Optimised(int[] nums)
     {
-        var cur = nums[0];
-        var max = nums[0];
+        var answer = nums[0];
+        var min = 1;
+        var max = 1;
         for (int i = 1; i < nums.Length; i++)
         {
             var val = nums[i];
-            var sum = cur * val;
-            cur = Math.Max(sum, val);
-            max = Math.Max(max, cur);
+            if (val == 0)
+            {
+                min = 1;
+                max = 1;
+                continue;
+            }
+            var valTimesMin = val * min;
+            var valTimesMax = val * max;
+            min = new int [] { val, valTimesMin, valTimesMax }.Min(x => x);
+            max = new int[] { val, valTimesMin, valTimesMax }.Max(x => x);
+            if (max > answer)
+                answer = max;
         }
 
         return max;
