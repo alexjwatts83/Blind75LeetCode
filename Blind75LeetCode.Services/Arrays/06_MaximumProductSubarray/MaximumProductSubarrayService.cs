@@ -15,7 +15,6 @@ public static class MaximumProductSubarrayService
             var sum = nums[i];
             for (int j = i + 1; j < nums.Length; j++)
             {
-                var val = nums[j];
                 sum *= nums[j];
                 max = Math.Max(max, sum);
             }
