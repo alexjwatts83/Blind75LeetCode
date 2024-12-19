@@ -32,6 +32,9 @@ public class MaximumProductSubarrayTests
         new List<object[]>
         {
             new object[] { new int[] { 1, 2, 3, 4 }, 24 },
-            new object[] { new int[] { -1, -2, -3, -4, -5 }, 120 }
+            new object[] { new int[] { -1, -2, -3, -4, -5 }, 120 },
+            new object[] { new int[] { 1, -2, -3, 4 }, 24 },
+            new object[] { new int[] { 2, 3, -2, 4 }, 6 },
+            new object[] { new int[] { -1, -2, -3, 0, 3, 5, -1, -2 }, 30 },
         };
 }
