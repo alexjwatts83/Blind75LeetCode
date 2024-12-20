@@ -39,8 +39,11 @@ public static class MaximumProductSubarrayService
             }
             var valTimesMin = val * min;
             var valTimesMax = val * max;
-            min = new int [] { val, valTimesMin, valTimesMax }.Min(x => x);
-            max = new int[] { val, valTimesMin, valTimesMax }.Max(x => x);
+
+            min = Math.Min(val, Math.Min(valTimesMin, valTimesMax));
+            max = Math.Max(val, Math.Max(valTimesMin, valTimesMax));
+            answer = Math.Max (answer, max);
+
             if (max > answer)
                 answer = max;
         }
