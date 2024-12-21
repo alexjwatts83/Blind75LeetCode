@@ -16,6 +16,19 @@ public class SearchInRotatedSortedArrayTests
         result.ShouldBe(answer);
     }
 
+    [Theory]
+    [MemberData(nameof(Data))]
+    public void OptimisedTests(int[] nums, int target, int answer)
+    {
+        // Arrange
+        // Act
+        var result = SearchInRotatedSortedArrayService.Optimised(nums, target);
+
+        // Assert
+        result.ShouldBe(answer);
+    }
+
+
     public static IEnumerable<object[]> Data =>
         new List<object[]>
         {

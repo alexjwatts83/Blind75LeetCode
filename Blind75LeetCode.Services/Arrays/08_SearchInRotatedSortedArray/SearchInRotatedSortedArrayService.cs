@@ -10,7 +10,19 @@ public static class SearchInRotatedSortedArrayService
 {
     public static int BruteForce(int[] nums, int target)
     {
-        var search = nums[0];
+        var search = -1;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if(target == nums[i])
+                return i;
+        }
+
+        return search;
+    }
+
+    public static int Optimised(int[] nums, int target)
+    {
+        var search = -1;
         for (int i = 0; i < nums.Length; i++)
         {
         }
