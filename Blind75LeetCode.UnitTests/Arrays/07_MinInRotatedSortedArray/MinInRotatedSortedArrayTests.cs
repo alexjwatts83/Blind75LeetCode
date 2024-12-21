@@ -20,5 +20,7 @@ public class MinInRotatedSortedArrayTests
         new List<object[]>
         {
             new object[] { new int[] { 6, 7, 8, 9, 0, 1, 2, 3, 4, 5 }, 0 },
+            new object[] { new int[] { 3, 4, 1, 2 }, 1 },
+            new object[] { new int[] { 2, 3, 4, 1 }, 1 },
         };
 }
