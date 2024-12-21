@@ -21,15 +21,30 @@ public static class MinInRotatedSortedArrayService
     {
         // { 6, 7, 8, 9, 0, 1, 2, 3, 4, 5 }
         // len = 10;
-        var left = nums[0];
-        var right = nums[nums.Length - 1];
-        var mid = nums.Length / 2;
-
-        //while(true)
-        //{
-        //    // if 
-        //}
-
-        return 0;
+        var leftIndex = 0;
+        var rightIndex = nums.Length - 1;
+        var midIndex = leftIndex + rightIndex / 2;
+        while (true) {
+            var numMid = nums[midIndex];
+            var numMidPlusOne = nums[midIndex + 1];
+            if (numMid < numMidPlusOne)
+            {
+                return numMid;
+            }
+            // { 8, 9, 0, 1, 2, 3, 4, 5, 6, 7 }
+            // { 2, 3, 4, 5, 6, 7, 8, 9, 0, 1 }
+            // check if left is sorted
+            var numLeft = nums[leftIndex];
+            var numRight = nums[rightIndex];
+            if (numLeft < numMid)
+            {
+                leftIndex = midIndex;
+                midIndex = leftIndex + rightIndex / 2;
+            } else
+            {
+                rightIndex = midIndex;
+                midIndex = leftIndex + rightIndex / 2;
+            }
+        }
     }
 }
