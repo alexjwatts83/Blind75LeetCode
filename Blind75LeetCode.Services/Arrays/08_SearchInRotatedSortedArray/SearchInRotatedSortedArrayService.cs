@@ -35,6 +35,8 @@ public static class SearchInRotatedSortedArrayService
                 return midIndex;
             }
             var leftVal = nums[leftIndex];
+            if (leftVal == target)
+                return leftIndex;
             if (leftVal < midVal)
             {
                 // lef to mid is sorted
@@ -42,6 +44,9 @@ public static class SearchInRotatedSortedArrayService
             }
             else
             {
+                var rightValtVal = nums[rightIndex];
+                if (rightValtVal == target)
+                    return rightIndex;
                 rightIndex = midIndex - 1;
             }
         }
