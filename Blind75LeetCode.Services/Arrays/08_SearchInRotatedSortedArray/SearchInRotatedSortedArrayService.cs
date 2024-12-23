@@ -22,11 +22,30 @@ public static class SearchInRotatedSortedArrayService
 
     public static int Optimised(int[] nums, int target)
     {
-        var search = -1;
-        for (int i = 0; i < nums.Length; i++)
+        var leftIndex = 0;
+        var rightIndex = nums.Length - 1;
+
+        // 4, 5, 6, 7, 0, 1, 2
+        while (leftIndex <= rightIndex)
         {
+            var midIndex = leftIndex + (rightIndex - leftIndex) / 2; // could cause out of bound index
+            var midVal = nums[midIndex];
+            if (midVal == target)
+            {
+                return midIndex;
+            }
+            var leftVal = nums[leftIndex];
+            if (leftVal < midVal)
+            {
+                // lef to mid is sorted
+                leftIndex = midIndex + 1;
+            }
+            else
+            {
+                rightIndex = midIndex - 1;
+            }
         }
 
-        return search;
+        return -1;
     }
 }
