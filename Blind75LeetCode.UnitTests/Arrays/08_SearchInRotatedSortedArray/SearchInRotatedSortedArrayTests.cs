@@ -34,6 +34,7 @@ public class SearchInRotatedSortedArrayTests
         {
             new object[] { new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0, 4 },
             new object[] { new int[] { 4, 5, 6, 7, 0, 1, 2 }, 3, -1 },
+            new object[] { new int[] { 6, 7, 8, 9, 0, 1, 2, 3, 4, 5 }, 4, 8 },
             new object[] { new int[] { 1 }, 0, -1 },
         };
 }
