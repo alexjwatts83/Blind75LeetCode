@@ -26,6 +26,7 @@ public static class SearchInRotatedSortedArrayService
         var rightIndex = nums.Length - 1;
 
         // 4, 5, 6, 7, 0, 1, 2
+        // 6, 7, 8, 9, 0, 1, 2, 3, 4, 5
         while (leftIndex <= rightIndex)
         {
             var midIndex = leftIndex + (rightIndex - leftIndex) / 2; // could cause out of bound index
@@ -39,17 +40,24 @@ public static class SearchInRotatedSortedArrayService
             if (leftVal == target)
                 return leftIndex;
 
+            // is left to middle sorted
             if (leftVal < midVal)
             {
-                // lef to mid is sorted
+                // left to mid is sorted
                 leftIndex = midIndex + 1;
             }
             else
             {
-                var rightValtVal = nums[rightIndex];
-                if (rightValtVal == target)
+                var rightVal = nums[rightIndex];
+                if (rightVal == target)
                     return rightIndex;
-                rightIndex = midIndex - 1;
+                // right to middle is sorted
+
+                // does mid to right contain target
+                if (midVal > target && target < rightVal)
+                {
+
+                }
             }
         }
 
